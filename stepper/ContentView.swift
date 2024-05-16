@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var amount = 10
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Total:\(amount)")
+                .font(.title3)
+                .bold()
+            Stepper("Enter an amount: \(amount)", value: $amount, in:0...200)
         }
+        .labelsHidden()
         .padding()
     }
 }
